@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<ruleset name="WordPress Plugin Coding Standards">
+    <description>A custom set of code standard rules to check for WordPress plugins.</description>
+
+    <config name="installed_paths" value="vendor/wp-coding-standards/wpcs"/>
+
+    <rule ref="WordPress">
+        <exclude name="WordPress.WP.I18n.NonSingularStringLiteralDomain" />
+    </rule>
+    <!-- https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/wiki/Customizable-sniff-properties -->
+    <!-- https://github.com/PHPCompatibility/PHPCompatibilityWP -->
+	<!-- <rule ref="PHPCompatibilityWP"/> -->
+
+ 	<!-- What to scan -->
+    <file>.</file>
+	<exclude-pattern>/vendor/</exclude-pattern>
+	<exclude-pattern>/node_modules/</exclude-pattern>
+	<exclude-pattern>/tests/</exclude-pattern>
+
+	<!-- How to scan -->
+	<!-- Usage instructions: https://github.com/squizlabs/PHP_CodeSniffer/wiki/Usage -->
+	<!-- Annotated ruleset: https://github.com/squizlabs/PHP_CodeSniffer/wiki/Annotated-ruleset.xml -->
+	<arg value="sp"/> <!-- Show sniff and progress -->
+	<arg name="basepath" value="./"/><!-- Strip the file paths down to the relevant bit -->
+	<arg name="colors"/>
+	<arg name="extensions" value="php"/>
+	<arg name="parallel" value="8"/><!-- Enables parallel processing when available for faster results. -->
+
+    <!-- <rule ref="Generic.Arrays.DisallowShortArraySyntax.Found">
+        <severity>0</severity>
+    </rule> -->
+
+</ruleset>
