@@ -53,7 +53,7 @@ add_action( 'init', __NAMESPACE__ . '\post_type', 10, 1 );
 add_action(
 	'add_meta_boxes',
 	function() {
-		add_meta_box( 'custom_slider_metabox', __( 'Custom post meta data', 'textdomain' ), __NAMESPACE__ . '\metabox', POST_TYPE__SLIDE, 'advanced', 'high' );
+		add_meta_box( 'custom_slider_metabox', __( 'Custom post meta data', 'textdomain' ), __NAMESPACE__ . '\metabox', __NAMESPACE__ . '\NAME', 'advanced', 'high' );
 	}
 );
 // Сохранять данные формы в мета боксе.
